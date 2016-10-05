@@ -1,0 +1,22 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="mm.apps.example-app-one.controller.app-one"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="Sample app">
+				<headerContent>
+					<Button icon="sap-icon://home" tooltip="Powrót do strony głównej" press="returnToLaunchpad"/>
+				</headerContent>
+				<content>
+					<BusyIndicator text="... something happens" class="sapUiSmallMarginBottom"/>
+					<HBox justifyContent="Start" alignItems="Center">
+						<BusyIndicator size="1.4em"/>
+						<BusyIndicator size="3em"/>
+						<BusyIndicator size="4.6em"/>
+						<BusyIndicator size="3em"/>
+						<BusyIndicator size="1.4em"/>
+					</HBox>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

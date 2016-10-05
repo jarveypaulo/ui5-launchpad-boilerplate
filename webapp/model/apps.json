@@ -1,0 +1,51 @@
+{
+	"apps" : [
+		{
+			"header": "First app",
+			"subheader": "App subheader",
+			"footer": "Footer",
+			"unitFooter": "Unit",
+			"icon": "it-system",
+			"image": "./images/SAPLogoLargeTile_28px_height.png",
+			"iconMenu": "it-system",
+			"routeName": "example-app-one"
+		},
+		{
+			"header" : "Second app",
+			"subheader": "subheader",
+			"icon": "calendar",
+			"iconMenu": "calendar",
+			"routeName": "example-app-two"
+		},
+		{
+			"header" : "Another app",
+			"subheader": "with number",
+			"icon": "line-charts",
+			"unit": "EUR",
+			"value": "1500",
+			"iconMenu": "line-charts",
+			"routeName": "example-app-one"
+		},	
+		{
+			"header" : "Some app",
+			"subheader": "",
+			"icon": "sap-ui5",
+			"unit": "EUR",
+			"value": "100",
+			"footer": "Footer",
+			"unitFooter": "Unit",
+			"iconMenu": "sap-ui5",
+			"routeName": "example-app-two"
+		},				
+		{
+			"header" : "KPI display",
+			"scale": "%",
+			"value": "12",
+			"valueColor": "Error",
+			"indicator": "Down",
+			"unit": "Income",
+			"iconMenu": "sap-ui5",
+			"routeName": "example-app-one"
+		}
+	]
+}

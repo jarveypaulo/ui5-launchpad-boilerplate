@@ -1,0 +1,140 @@
+{
+	"_version": "1.1.0",
+	"sap.app": {
+		"_version": "1.1.0",
+		"id": "mm",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.32.0"
+		}
+	},
+	"sap.ui": {
+		"_version": "1.1.0",
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": ["sap_hcb", "sap_bluecrystal"]
+	},
+	"sap.ui5": {
+		"_version": "1.1.0",
+		"rootView": {
+			"viewName": "mm.view.app",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "mm.i18n.i18n"
+				}
+			},
+			"apps": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/apps.json",
+				"preload": "true"
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "mm.view",
+				"controlId": "idAppControl",
+				"controlAggregation": "detailPages",
+				"bypassed": {
+					"target": ["menu"]
+				},
+				"async": true,
+				"transition": "slide"
+			},
+			"routes": [{
+				"name": "menu",
+				"pattern": "",
+				"target": ["launchpad", "menu"]
+			}, {
+				"name": "launchpad",
+				"pattern": "launchpad",
+				"target": ["menu", "launchpad"]
+			}, {
+				"name": "example-app-one",
+				"pattern": "/example/one",
+				"target": "app-one"
+			}, {
+				"name": "example-app-two",
+				"pattern": "/example/two",
+				"target": "app-two"
+			}],
+			"targets": {
+				"menu": {
+					"viewId": "menu",
+					"viewName": "menu",
+					"viewType": "JS",
+					"viewLevel": 1,
+					"controlAggregation": "masterPages"
+				},
+				"launchpad": {
+					"viewId": "launchpad",
+					"viewName": "launchpad",
+					"viewType": "JS",
+					"viewLevel": 2,
+					"transition": "flip"
+				},
+				"app-one": {
+					"viewId": "app-one",
+					"viewName": "app-one",
+					"viewType": "XML",
+					"viewPath": "mm.apps.example-app-one.view",
+					"viewLevel": 2,
+					"clearAggregation": false,
+					"controlAggregation": "detailPages",
+					"transition": "slide"
+				},
+				"app-two": {
+					"viewId": "app-two",
+					"viewName": "app-two",
+					"viewType": "XML",
+					"viewPath": "mm.apps.example-app-two.view",
+					"viewLevel": 2,
+					"clearAggregation": false,
+					"controlAggregation": "detailPages",
+					"transition": "slide"
+				}
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		}
+	}
+}

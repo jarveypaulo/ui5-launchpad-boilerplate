@@ -1,0 +1,24 @@
+<mvc:View controllerName="mm.apps.example-app-two.controller.app-two" xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified"
+	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="Sample app">
+				<headerContent>
+					<Button icon="sap-icon://home" tooltip="Back to dashboard" press="returnToLaunchpad"/>
+				</headerContent>
+				<content>
+					<l:VerticalLayout>
+						<l:content>
+							<u:Calendar id="calendar" select="handleCalendarSelect"/>
+							<Button press="handleSelectToday" text="Select Today"/>
+							<l:HorizontalLayout>
+								<Label text="Selected Date (yyyy-mm-dd):" class="labelMarginLeft"/>
+								<Text id="selectedDate" text="No Date Selected" class="labelMarginLeft"/>
+							</l:HorizontalLayout>
+						</l:content>
+					</l:VerticalLayout>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
